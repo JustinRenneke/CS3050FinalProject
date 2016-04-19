@@ -77,21 +77,6 @@ public class StockBuySellKTransactions {
         int optimalSolution = 0;
         int ithTrade;
 
-//        for (ithTrade = 1; ithTrade < transactions.length; ithTrade++) {
-//            for (int j = 1; j < transactions[0].length; j++) {
-//                int maxVal = 0;
-//                for (int prevDay = 0; prevDay < j; prevDay++) {
-//                    if(prevDay-1 >= 0){
-//                        maxVal = Math.max(maxVal, prices[j] - prices[prevDay] + transactions[ithTrade-1][prevDay-1]);
-//                    }
-//                    else{
-//                        maxVal = Math.max(maxVal, prices[j] - prices[prevDay] + transactions[ithTrade-1][prevDay]);
-//                    }
-//                }
-//                transactions[ithTrade][j] = Math.max(transactions[ithTrade][j-1], maxVal);
-//            }
-//        }
-//        System.out.println("Printing content of 2d array: " + Arrays.deepToString(transactions));
         for (ithTrade = 1; ithTrade < transactions.length; ithTrade++) {
             for (int j = 1; j < transactions[0].length; j++) {
                 int maxVal = 0;
@@ -102,11 +87,7 @@ public class StockBuySellKTransactions {
             }
         }
         System.out.println("Printing content of 2d array: " + Arrays.deepToString(transactions));
-//        for(i = 0; i < K; i++){
-//            if(T[i][prices.length-1] == T[K][prices.length-1]){
-//                optimalSolution = i;
-//            }
-//        }
+
         if(transactions[0][prices.length-1] == transactions[trades][prices.length-1]){
             optimalSolution = 0;
         }
@@ -157,15 +138,10 @@ public class StockBuySellKTransactions {
         while(optimalSolution > 0 && !stack.isEmpty()) {
 //        while(!stack.isEmpty()) {
             System.out.println("Buy at day " + (stack.pollFirst()+1));  //start at day 1
-//            System.out.println("Buy at day " + (stack.pollFirst()));  //start at day 0
-//            System.out.println(stack.pollLast());
-            
-//            System.out.println(stack.pollFirst()+1);
+
 //            System.out.println("Buy at price " + prices[stack.pollFirst()]);
 //            System.out.println("Sell at price " + prices[stack.pollFirst()]);
             System.out.println("Sell at day " + (stack.pollFirst()+1)); //start at day 1
-//            System.out.println("Sell at day " + (stack.pollFirst())); //start at day 0
-//            System.out.println(optimalSolution);
             optimalSolution--;
         }
     }
