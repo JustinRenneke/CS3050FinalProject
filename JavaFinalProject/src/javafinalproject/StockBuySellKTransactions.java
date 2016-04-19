@@ -1,25 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javafinalproject;
 
 import java.util.Deque;
 import java.util.LinkedList;
 
-/**
- * Date 12/22/2015
- * @author Tushar Roy
- *
- * Given stockc prices for certain days and at most k transactions how to buy and sell
- * to maximize profit.
- *
- * Time complexity - O(number of transactions * number of days)
- * Space complexity - O(number of transcations * number of days)
- *
- * https://leetcode.com/discuss/15153/a-clean-dp-solution-which-generalizes-to-k-transactions
- */
 public class StockBuySellKTransactions {
 
     /**
